@@ -1,0 +1,65 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:key="first_preferencescreen">
+	<PreferenceCategory android:title="@string/ui_server_settings_label" android:order="1">
+		<PreferenceScreen
+			android:title="@string/ui_server_settings_label">
+			<EditTextPreference android:key="imap_server_uri"
+				android:title="@string/ui_imap_server_uri_label"
+				android:summary="@string/ui_imap_server_uri_desc"
+				android:singleLine="true"
+				android:dialogMessage="@string/ui_imap_server_uri_dialog_msg"
+				android:defaultValue="@string/ui_imap_server_uri_default"
+				android:persistent="true"/>
+			<ListPreference
+	            android:title="@string/ui_imap_security_protocol"
+	            android:key="security_protocol"
+        		android:summary="@string/ui_security_protocols_desc"
+	            android:entries="@array/security_protocols_list"
+	            android:entryValues="@array/security_protocols_list"
+	            android:defaultValue="@string/ui_ssl_label"
+				android:persistent="true"
+	             />
+			<EditTextPreference android:key="login_user"
+				android:title="@string/ui_login_label"
+				android:summary="@string/ui_login_desc"
+				android:singleLine="true"
+				android:dialogMessage="@string/ui_login_dialog_msg"
+				android:persistent="true"/>
+			<EditTextPreference android:key="login_password"
+				android:title="@string/ui_password_label"
+				android:summary="@string/ui_password_desc"
+				android:singleLine="true"
+				android:password="true"
+				android:dialogMessage="@string/ui_password_dialog_msg"
+				android:persistent="true"/>
+			<EditTextPreference android:key="imap_folder"
+				android:title="@string/ui_imap_folder_label"
+				android:summary="@string/ui_imap_folder_desc"
+				android:singleLine="true"
+				android:dialogMessage="@string/ui_imap_folder_label_dialog_msg"
+				android:persistent="true"
+				android:defaultValue="SMS"/>
+			<CheckBoxPreference android:key="mark_as_read"
+				android:title="@string/ui_mark_as_read_label"
+				android:summary="@string/ui_mark_as_read_desc"
+				android:persistent="true"
+				android:defaultValue="false"/>
+		</PreferenceScreen>
+	</PreferenceCategory>
+	<PreferenceCategory android:title="@string/ui_sync_settings_label" android:order="2">
+		<PreferenceScreen
+			android:title="@string/ui_sync_settings_label">
+			<CheckBoxPreference android:key="enable_auto_sync"
+				android:title="@string/ui_enable_auto_sync_label"
+				android:summary="@string/ui_enable_auto_sync_desc"
+				android:persistent="true"
+				android:defaultValue="true"/>
+			<ListPreference android:key="max_items_per_sync"
+				android:title="@string/ui_max_items_per_sync_label"
+				android:summary="@string/ui_max_items_per_sync_desc"
+				android:entries="@array/max_items_per_sync_entries"
+				android:entryValues="@array/max_items_per_sync_entries"
+				android:defaultValue="100"
+				android:persistent="true"/>
+		</PreferenceScreen>	
+	</PreferenceCategory>
+</PreferenceScreen>
